@@ -18,6 +18,9 @@
 .env.test.local
 .env.production.local
 
+# IntelliJ 의 IDE 옵션(프로젝트별 설정값)을 저장하는 폴더
+*.idea
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

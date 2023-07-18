@@ -1,10 +1,8 @@
-//import { useState, useRef, useCallback } from "react";
-import TodoApp from "./pages/bomvomsss/index";
+import "../../index.css";
 
-const App = () => {
+const TodoApp = () => {
   return (
     <>
-    <TodoApp />
       <div className="viewWrap">
         <div className="todoWrap">
           
@@ -17,4 +15,4 @@ const App = () => {
   );
 }
 
-export default App;
+export default TodoApp;

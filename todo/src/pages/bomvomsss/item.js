@@ -1,7 +1,7 @@
 import { useState, useRef, useCallback } from "react";
-import './index.css';
+import "../../index.css";
 
-const TodoCreate = () => {
+const TodoItem = () => {
   return(
     <>
     
@@ -9,4 +9,4 @@ const TodoCreate = () => {
   )
 }
 
-export default TodoCreate;
+export default TodoItem;

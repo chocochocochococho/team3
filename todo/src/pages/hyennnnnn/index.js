@@ -1,6 +1,6 @@
 import "../../index.css";
 
-const TodoApp = () => {
+const TodoApp02 = () => {
   return (
     <>
       <div className="viewWrap">
@@ -8,11 +8,11 @@ const TodoApp = () => {
           
         </div>
         <div className="doneWrap">
-
+          
         </div>
       </div>
     </>
   );
 }
 
-export default TodoApp;
+export default TodoApp02;

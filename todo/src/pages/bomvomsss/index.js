@@ -15,7 +15,7 @@ const TodoApp = () => {
           
         </div>
         <div className="doneWrap">
-
+          
         </div>
       </div>
     </>

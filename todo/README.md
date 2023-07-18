@@ -1,4 +1,5 @@
 # 웹개발 3팀 ToDo 앱 Toy-Project width React.js
+[3장. 멋진 투두리스트 만들기](https://react.vlpt.us/mashup-todolist/)
 
 ## 주요 사용 터미널 명령
 

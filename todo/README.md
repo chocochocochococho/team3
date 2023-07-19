@@ -1,4 +1,4 @@
-# 웹개발 3팀 ToDo 앱 Toy-Project width React.js
+# 웹개발 3팀 ToDo 앱 Toy-Project with React.js
 
 ## 참고 사이트
 

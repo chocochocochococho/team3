@@ -4,6 +4,7 @@
 
 - [3장. 멋진 투두리스트 만들기](https://react.vlpt.us/mashup-todolist/)
 - [[React] 간단한 투두리스트 만들기](https://velog.io/@soonmac/React-%EA%B0%84%EB%8B%A8%ED%95%9C-%ED%88%AC%EB%91%90%EB%A6%AC%EC%8A%A4%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0)
+- [리액트 투두앱 간단하게 만들기 - 10분만에](https://jaegeun.tistory.com/59)
 
 ## 주요 사용 터미널 명령
 

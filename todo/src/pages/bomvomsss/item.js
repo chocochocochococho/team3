@@ -1,36 +1,65 @@
 import { useState, useRef, useCallback } from "react"; // eslint-disable-line no-unused-vars
 import "../../index.css";
 
-const TodoItem = ({todo}) => {
-  const {id, text, checked} = todo;
+const TodoItem = () => {
+  const mockData = [
+    {
+      id : 1,
+      todo : "산책하기",
+      doen : false,
+      isImportant : false,
+    },
+    {
+      id : 2,
+      todo : "수영하기",
+      doen : false,
+      isImportant : false,
+    },
+    {
+      id : 3,
+      todo : "달리기",
+      doen : false,
+      isImportant : false,
+    },
+  ]
   
-  const [todos, setTodos] = useState('');
-  const [selectTodo, setselectTodo] = useState(null);
-  const [insertToggle, setInsertToggle] = useState(false);
+  const [tasks, setTasks] = useState(mockData);
+  const [newTask, setNewTask] = useState('');
 
-  const onRemove = useCallback((todos) => {
-    setTodos((todos) => todos.filter((todo) => todo.id !== id));
-  }, []);
+  const handleAddTask = () => {
+    setTasks([...tasks, newTask]);
+    setNewTask('');
+  };
 
-  const CheckBox = () => {}
-  const CheckBoxBlank = () => {}
-  
+  const handleDeleteTask = (id) => {
+    const updateTask = tasks.filter((_,i) => i !== id);
+    setTasks(updateTask);
+  }
+
   return(
-    <li className="todoItem">
-      <div className="{cn('checkbox', {chcked})}">
-        {/* checked=true일 때 checked라는 class를 추가 (className="{cn()}"문법)*/}
-        {checked ? <CheckBox/> : <CheckBoxBlank/>}
-        {/* checked=true면 체크된 박스 아이콘이, false면 빈 박스 아이콘이 뜸 */}
-        <div className="text">{text}</div>
+    <div className="itemWrap">
+      <div className="inputItem">
+        <input
+        type="text"
+        value={newTask}
+        onChange={(e) => setNewTask(e.target.value)}
+        placeholder = "입력"
+        />
+        <button onClick={handleAddTask}>↩</button>
       </div>
-      <div className="edit">
-        
-      </div>
-      <div className="remove" onClick={() => onRemove(id)}>
-        
-      </div>
-    </li>
+      <ul>
+        {tasks.map((task, id) => (
+          <li key={id}>
+            {task}
+            <button onClick={() => handleDeleteTask(id)}>
+              ❌
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
   )
+  
 }
 
 export default TodoItem;

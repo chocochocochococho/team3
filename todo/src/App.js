@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import TodoApp from "./pages/bomvomsss/index";
 import TodoApp02 from "./pages/hyennnnnn/index";
 
+import ChocoMain from "./pages/chocochococho/ChocoMain";
+
 const App = () => {
   return (
     <BrowserRouter>
@@ -10,7 +12,7 @@ const App = () => {
         <Route path="/bomvomsss" element={<TodoApp />}/>
         <Route path="/hyennnnnn" element={<TodoApp02 />}/>
         {/* <Route path="/" element={}/> 가하님 쓰세용 */}
-        {/* <Route path="/" element={}/> 규원님 쓰세용 */}
+        <Route path="/chocochococho" element={<ChocoMain/>}/>
       </Routes>
       <div className="viewWrap">
         <div className="todoWrap">

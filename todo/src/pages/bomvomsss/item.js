@@ -2,38 +2,46 @@ import { useState, useRef, useCallback } from "react"; // eslint-disable-line no
 import "../../index.css";
 
 const TodoItem = () => {
-  const mockData = [
-    {
-      id : 1,
-      todo : "산책하기",
-      doen : false,
-      isImportant : false,
-    },
-    {
-      id : 2,
-      todo : "수영하기",
-      doen : false,
-      isImportant : false,
-    },
-    {
-      id : 3,
-      todo : "달리기",
-      doen : false,
-      isImportant : false,
-    },
-  ]
-  
-  const [tasks, setTasks] = useState(mockData);
+    
+  const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState('');
+  const [editTask, setEditTask] = useState('');
+  const [editMode, setEditMode] = useState(false);
+  const [editIndex, seteditIndex] = useState(null);
 
   const handleAddTask = () => {
-    setTasks([...tasks, newTask]);
-    setNewTask('');
+    if(newTask.trim() !== ''){
+      setTasks([...tasks, { task:newTask, completed: false}]);
+      setNewTask('');
+    }
   };
 
   const handleDeleteTask = (id) => {
     const updateTask = tasks.filter((_,i) => i !== id);
     setTasks(updateTask);
+  }
+
+  const handleCheckTask = (id) => {
+    const updateTask = tasks.map((task, i) => 
+      i === id ? {...task, completed: !task.completed } : task
+    );
+    setTasks(updateTask);
+  }
+
+  const handleUpdateTask = (id) => {
+    if(editMode){
+      const updateTask = tasks.map((task, i) => 
+        i === id ? {...task, edit: !task.edit} : task
+      );
+      setTasks(updateTask);
+      setEditTask('');
+      setEditMode(false);
+      seteditIndex(id);
+    }else{
+      seteditIndex(null);
+      setEditTask('');
+      setEditTask('');
+    }
   }
 
   return(
@@ -50,7 +58,24 @@ const TodoItem = () => {
       <ul>
         {tasks.map((task, id) => (
           <li key={id}>
-            {task}
+            <button onClick={() => handleCheckTask(id)}>
+              {task.completed ? '✅' : '⬜'}
+            </button>
+            {editMode && id === editIndex ? (
+              <input
+                type="text"
+                value={editTask}
+                onChange={(e) => setNewTask(e.target.value)}
+                autoFocus
+              />
+            ):(
+              <span 
+                style={{textDecoration: task.completed ? 'line-through' : 'none',}}
+              >
+                {task.task}
+              </span>
+            )}
+            <button onClick={() => handleUpdateTask(id)}>수정</button>
             <button onClick={() => handleDeleteTask(id)}>
               ❌
             </button>

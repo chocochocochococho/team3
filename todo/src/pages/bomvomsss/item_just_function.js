@@ -1,7 +1,7 @@
 import { useState, useRef, useCallback } from "react"; // eslint-disable-line no-unused-vars
 import "../../index.css";
 
-const TodoItem = () => {
+const TodoItemFn = () => {
     
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState('');
@@ -85,4 +85,4 @@ const TodoItem = () => {
   
 }
 
-export default TodoItem;
+export default TodoItemFn;

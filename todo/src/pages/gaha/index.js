@@ -13,7 +13,7 @@ const Gaha = () => {
   }
   return (
     <>
-      <div className="viewWrap">
+      <div className="viewWrap gaha">
         <h1></h1>
         <div
         className="list">

@@ -7,7 +7,7 @@ import Done from './Done.js';
 const TodoApp02 = () => {
   return (
     <>
-      <div className="viewWrap">
+      <div className="hyenn_area">
         <h2></h2>
 
         <div className="list">

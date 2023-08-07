@@ -1,10 +1,47 @@
-.hyenn_area{width:750px;margin:100px auto;}
-.hyenn_area h2{width:100%;height:83px;background:url('../../assets/img/tit.jpg');}
-.hyenn_area .list{display:flex;justify-content:space-between;margin-top:50px;}
+.hyenn_area {
+  width: 750px;
+  margin: 100px auto;
+}
+.hyenn_area h2 {
+  width: 100%;
+  height: 83px;
+  background: url("../../assets/img/tit.jpg");
+}
+.hyenn_area .list {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+.hyenn_area .pink_wrap{border:2px solid #f584ac;padding:10px;border-radius:10px;background:#ffdfec;height:400px;}
+
 /* todo */
-.hyenn_area .todo{width:46%;}
-.hyenn_area .todo h3{background:url('../../assets/img/sub_tit1.jpg');width:100%;height:42px;}
+.hyenn_area .todo {
+  width: 46%;
+}
+.hyenn_area .todo h3 {
+  background: url("../../assets/img/sub_tit1.jpg");
+  width: 100%;
+  height: 42px;
+}
+.hyenn_area .pink_wrap input.todo_item{margin-right:13px;width:73%;border:none;height:38px;}
+.hyenn_area .pink_wrap button.add_btn{background:#f384ae;border:none;color:#d4315f;width:22%;height:38px;font-size:13px;}
 
 /* done */
-.hyenn_area .done{width:46%;}
-.hyenn_area .done h3{background:url('../../assets/img/sub_tit2.jpg');width:100%;height:42px;}
+.hyenn_area .done {
+  width: 46%;
+}
+.hyenn_area .done h3 {
+  background: url("../../assets/img/sub_tit2.jpg");
+  width: 100%;
+  height: 42px;
+}
+.hyenn_area .done h4{background:url(../../assets/img/kirby.jpg);width:100%;height:60px;}
+.hyenn_area .done .pink_wrap{background:#f384ae;}
+.hyenn_area .done .pink_wrap .todoapp_list{background:#972846;border-radius:10px;padding:10px;}
+.hyenn_area .done .todoapp_list .todoapp_item_cont{color:#f1e4e6;}
+
+/* todoitemlist */
+.hyenn_area .todoapp_list .todoapp_item{margin-top:13px;display:flex;align-items:center;justify-content:space-between;}
+.hyenn_area .todoapp_list .todoapp_item .right_area button{background:transparent;border:none;}
+.hyenn_area .todoapp_list .todoapp_item_chk{margin-right:5px;accent-color:#d72b57;}
+.hyenn_area .todoapp_list .todoapp_item_cont{color:#d4315f;}

@@ -131,14 +131,15 @@ const ChocoMain = () => {
     }
 
     //todo 추가, input 비우기
-    const addTodo = () => {
+    const addTodo = (event) => {
+        event.preventDefault(); // 폼 제출 방지
         if (inputValue.trim() !== '') {
-            console.log(inputValue, 'todo 추가')
+            console.log(inputValue, 'todo 추가');
             setTodoData((prev) => [inputValue, ...prev]);
             setInputValue('');
-            addInput.current.value = ''
+            addInput.current.value = '';
         }
-    }
+    };
 
     //todo 추가 상태 업데이트
     const addInputChange = (event) => {
@@ -147,10 +148,11 @@ const ChocoMain = () => {
         setInputValue(value); // 상태 업데이트
     };
 
-    //todo 등록 input 작성 후 'Enter'키로 등록
+  //todo 등록 input 작성 후 'Enter'키로 등록
     const addKeyDown = (event) => {
         if (event.key === 'Enter') {
-          addTodo();
+            event.preventDefault();
+            addTodo();
         }
     };
 
@@ -198,7 +200,7 @@ const ChocoMain = () => {
                     <div className='todo_area'>
                     <img src={todoTitle} alt="todo 타이틀"/>
                         <div className='todo_list'>
-                            <form onSubmit={(e) => e.preventDefault()}>
+                            <form onSubmit={addTodo}>
                                 <input ref={addInput} className="add_box" type="text" onChange={addInputChange} onKeyDown={addKeyDown}/>
                                 <button type="button" onClick={addTodo}>Add</button>
                             </form>
